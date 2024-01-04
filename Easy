@@ -1,0 +1,6 @@
+# Top Earners
+
+select concat(
+    max(months*salary),'  ',(select count(*) from employee where months*salary=(select max(months*salary) from employee))
+    )
+from employee;
